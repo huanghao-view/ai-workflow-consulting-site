@@ -248,7 +248,8 @@ h3 {
 
 .metric-grid span,
 .deliverables span,
-.process-list span {
+.process-list span,
+.case-summary span {
   color: var(--muted);
 }
 
@@ -271,6 +272,30 @@ h3 {
   background: rgba(104, 67, 15, 0.32);
 }
 
+.price-note {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #173d39;
+  color: #ffffff;
+}
+
+.price-note strong,
+.price-note span {
+  display: block;
+}
+
+.price-note strong {
+  margin-bottom: 6px;
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.price-note span {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 14px;
+}
+
 .section {
   padding: clamp(64px, 8vw, 104px) clamp(20px, 6vw, 88px);
 }
@@ -282,7 +307,10 @@ h3 {
 
 .problem-grid,
 .industry-grid,
-.boundary-grid {
+.boundary-grid,
+.fit-grid,
+.case-layout,
+.safety-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
@@ -292,7 +320,10 @@ h3 {
 .industry-grid div,
 .boundary-grid div,
 .comparison article,
-.person-card {
+.person-card,
+.fit-grid article,
+.case-card,
+.safety-grid article {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
@@ -315,8 +346,40 @@ h3 {
 .industry-grid p,
 .person-card p,
 .comparison p,
-.cta-section p {
+.cta-section p,
+.case-card p,
+.safety-grid p {
   color: var(--muted);
+}
+
+.fit-check {
+  padding-top: 0;
+}
+
+.fit-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.fit-grid article {
+  padding: 28px;
+}
+
+.fit-grid ul {
+  margin: 18px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.fit-grid li + li {
+  margin-top: 10px;
+}
+
+.fit-good {
+  background: var(--green-soft);
+}
+
+.fit-bad {
+  background: #fbf0ef;
 }
 
 .band {
@@ -399,6 +462,38 @@ h3 {
   margin-top: 8px;
 }
 
+.case-study {
+  background: #fbfaf7;
+  border-bottom: 1px solid var(--line);
+}
+
+.case-layout {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-card {
+  min-height: 250px;
+  padding: 26px;
+}
+
+.case-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 0.5fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 24px;
+  border: 1px solid rgba(9, 81, 76, 0.18);
+  border-radius: 8px;
+  background: var(--green-soft);
+}
+
+.case-summary strong {
+  color: var(--teal-dark);
+  font-size: 22px;
+  line-height: 1.3;
+}
+
 .industries {
   background: #f1f4f1;
 }
@@ -408,8 +503,15 @@ h3 {
 }
 
 .industry-grid div {
-  min-height: 210px;
+  min-height: 250px;
   padding: 26px;
+}
+
+.industry-grid strong {
+  display: block;
+  margin-top: 18px;
+  color: var(--teal-dark);
+  line-height: 1.55;
 }
 
 .example {
@@ -491,6 +593,19 @@ h3 {
 .process-list strong {
   margin-bottom: 12px;
   font-size: 20px;
+}
+
+.safety {
+  background: #eef5f3;
+}
+
+.safety-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.safety-grid article {
+  min-height: 190px;
+  padding: 24px;
 }
 
 .boundary {
@@ -647,8 +762,14 @@ body.modal-open {
 
   .problem-grid,
   .process-list,
-  .boundary-grid {
+  .boundary-grid,
+  .safety-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-layout,
+  .industry-grid {
+    grid-template-columns: 1fr;
   }
 
   .team-layout {
@@ -702,7 +823,14 @@ body.modal-open {
   .problem-grid,
   .industry-grid,
   .process-list,
-  .boundary-grid {
+  .boundary-grid,
+  .fit-grid,
+  .case-layout,
+  .safety-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-summary {
     grid-template-columns: 1fr;
   }
 
